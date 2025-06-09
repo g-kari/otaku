@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>古の個人サイト - 2000年代のオタクホームページ</title>
+<style type="text/css">
+<!--
+body {
+    background-image: url('bg_pattern.gif');
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+    font-family: "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 12px;
+}
+
+/* タイトル画像風スタイル */
+.title-text {
+    font-family: "創英角ポップ体", "Comic Sans MS", cursive;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff0000;
+    text-shadow: 2px 2px 0px #ffff00, 4px 4px 0px #00ff00, 6px 6px 0px #0000ff;
+    text-align: center;
+    background: linear-gradient(45deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    padding: 10px;
+}
+
+/* カウンター表示 */
+.counter {
+    background-color: #000000;
+    color: #00ff00;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    padding: 5px;
+    border: 2px solid #00ff00;
+    text-align: center;
+}
+
+/* フォーム要素 */
+.retro-form {
+    background-color: #c0c0c0;
+    border: 2px inset #c0c0c0;
+    padding: 10px;
+}
+
+.retro-button {
+    background-color: #c0c0c0;
+    border: 2px outset #c0c0c0;
+    font-size: 12px;
+    padding: 2px 8px;
+}
+
+.retro-input {
+    background-color: white;
+    border: 2px inset #c0c0c0;
+    font-size: 12px;
+    padding: 2px;
+}
+
+/* リンクスタイル */
+a:link { color: #0000ff; text-decoration: underline; }
+a:visited { color: #800080; text-decoration: underline; }
+a:hover { color: #ff0000; text-decoration: underline; background-color: #ffff00; }
+
+/* キラキラエフェクト用 */
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffff00;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* 同盟バナー */
+.alliance-banner {
+    width: 200px;
+    height: 40px;
+    border: 1px solid #000000;
+    margin: 2px;
+}
+-->
+</style>
+
+<script type="text/javascript">
+<!--
+// 右クリック禁止
+document.oncontextmenu = function() {
+    alert('右クリック禁止！');
+    return false;
+}
+
+// キラキラエフェクト
+var sparkles = [];
+var maxSparkles = 20;
+
+function createSparkle(x, y) {
+    if (sparkles.length >= maxSparkles) {
+        var oldSparkle = sparkles.shift();
+        if (oldSparkle && oldSparkle.parentNode) {
+            oldSparkle.parentNode.removeChild(oldSparkle);
+        }
+    }
+    
+    var sparkle = document.createElement('span');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = (x - 5) + 'px';
+    sparkle.style.top = (y - 5) + 'px';
+    sparkle.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    document.body.appendChild(sparkle);
+    sparkles.push(sparkle);
+    
+    // フェードアウト
+    setTimeout(function() {
+        if (sparkle && sparkle.parentNode) {
+            sparkle.parentNode.removeChild(sparkle);
+            var index = sparkles.indexOf(sparkle);
+            if (index > -1) {
+                sparkles.splice(index, 1);
+            }
+        }
+    }, 1000);
+}
+
+document.onmousemove = function(e) {
+    var x = e.clientX || e.pageX;
+    var y = e.clientY || e.pageY;
+    createSparkle(x, y);
+}
+
+// カウンター更新
+var counter = 200123;
+function updateCounter() {
+    counter++;
+    document.getElementById('visitor-counter').innerHTML = counter;
+    setTimeout(updateCounter, 5000 + Math.random() * 10000);
+}
+
+window.onload = function() {
+    updateCounter();
+}
+//-->
+</script>
+</head>
+
+<body>
+<!-- メインテーブルレイアウト開始 -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+
+<!-- ヘッダー部分 -->
+<table width="100%" border="3" cellpadding="5" cellspacing="0" bordercolor="#ff0000">
+<tr>
+<td bgcolor="#ffff00" align="center">
+<font class="title-text">古の個人サイト</font>
+<hr size="5" color="#ff0000" noshade>
+<marquee behavior="alternate" bgcolor="#00ffff" width="80%">
+<blink>★☆★ いらっしゃいませ！！！ ★☆★</blink>
+</marquee>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- メインコンテンツ -->
+<table width="100%" border="2" cellpadding="5" cellspacing="0" bordercolor="#0000ff">
+<tr>
+<!-- 左サイドバー -->
+<td width="200" bgcolor="#ffccff" valign="top">
+<table width="100%" border="1" cellpadding="3" cellspacing="0" bordercolor="#ff00ff">
+<tr>
+<td bgcolor="#ff99ff" align="center">
+<font color="#0000ff"><b>★ カウンター ★</b></font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<table border="0" cellpadding="2" cellspacing="0">
+<tr>
+<td class="counter">
+あなたは<br>
+<span id="visitor-counter">200123</span><br>
+人目の訪問者です
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<br>
+
+<table width="100%" border="1" cellpadding="3" cellspacing="0" bordercolor="#ff00ff">
+<tr>
+<td bgcolor="#ff99ff" align="center">
+<font color="#0000ff"><b>★ キリ番報告 ★</b></font>
+</td>
+</tr>
+<tr>
+<td>
+<form action="guest.cgi" method="post" class="retro-form">
+キリ番ゲット！<br>
+<input type="text" name="kiriban" class="retro-input" size="8"><br>
+お名前：<br>
+<input type="text" name="name" class="retro-input" size="15"><br>
+<input type="submit" value="報告！" class="retro-button">
+</form>
+</td>
+</tr>
+</table>
+
+<br>
+
+<table width="100%" border="1" cellpadding="3" cellspacing="0" bordercolor="#ff00ff">
+<tr>
+<td bgcolor="#ff99ff" align="center">
+<font color="#0000ff"><b>★ MENU ★</b></font>
+</td>
+</tr>
+<tr>
+<td>
+<a href="guest.html">📝 ゲストブック</a><br>
+<a href="guest.html">💬 掲示板</a><br>
+<a href="links.html">🔗 相互リンクの部屋</a><br>
+<a href="ashiato.html">👣 足あと帳</a><br>
+<a href="baton.html">✨ お題バトン</a><br>
+<a href="http://独吐きネットマナー.example.com" target="_blank">⚠️ 毒吐きネットマナー</a><br>
+</td>
+</tr>
+</table>
+
+</td>
+
+<!-- メインコンテンツエリア -->
+<td bgcolor="#ffffcc" valign="top">
+<table width="100%" border="0" cellpadding="10" cellspacing="0">
+<tr>
+<td align="center">
+<img src="under_construction.gif" alt="工事中" width="100" height="50">
+<font size="4" color="#ff0000"><b>只今工事中！</b></font>
+<img src="new.gif" alt="NEW!" width="50" height="30">
+</td>
+</tr>
+</table>
+
+<hr size="3" color="#00ff00" noshade>
+
+<table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td align="center">
+<font size="3" color="#0000ff"><b>★ 自作萌え絵コーナー ★</b></font><br>
+<img src="moe.png" alt="萌え絵" width="300" height="400" border="2">
+</td>
+</tr>
+</table>
+
+<hr size="3" color="#ff00ff" noshade>
+
+<table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td align="center">
+<font size="3" color="#ff0000"><b>★ 同盟バナー ★</b></font><br>
+<img src="alliance1.gif" alt="同盟1" class="alliance-banner">
+<img src="alliance2.gif" alt="同盟2" class="alliance-banner">
+<img src="alliance3.gif" alt="同盟3" class="alliance-banner">
+</td>
+</tr>
+</table>
+
+<hr size="3" color="#ffff00" noshade>
+
+<table width="100%" border="0" cellpadding="10" cellspacing="0">
+<tr>
+<td>
+<font color="#666666" size="2">
+最終更新：2003年12月25日<br>
+このサイトは1024×768以上の解像度でご覧ください。<br>
+Netscape4.7、IE5.0以上推奨。<br>
+<br>
+<font color="#ff0000">※ 画像・文章の無断転載は禁止です。</font><br>
+<br>
+何かございましたら<a href="mailto:webmaster@example.com">webmaster@example.com</a>まで。
+</font>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- フッター -->
+<table width="100%" border="1" cellpadding="5" cellspacing="0" bordercolor="#000000">
+<tr>
+<td bgcolor="#cccccc" align="center">
+<font size="1">
+Copyright &copy; 2003 古の個人サイト All Rights Reserved.<br>
+<a href="secret.html"><img src="secret.gif" alt="" width="1" height="1" border="0"></a>
+This page is best viewed with Netscape Navigator 4.7 or Internet Explorer 5.0 or higher.
+</font>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+<!-- メインテーブルレイアウト終了 -->
+
+</body>
+</html>
