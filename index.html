@@ -143,6 +143,32 @@ function updateCounter() {
 window.onload = function() {
     updateCounter();
 }
+
+// キリ番報告処理
+function reportKiriban() {
+    var kiriban = document.getElementById('kiriban').value;
+    var name = document.getElementById('name').value;
+    
+    if (!kiriban || !name) {
+        alert('キリ番と名前の両方を入力してください！');
+        return false;
+    }
+    
+    if (!/^\d+$/.test(kiriban)) {
+        alert('キリ番は数字で入力してください！');
+        return false;
+    }
+    
+    alert('★☆★ キリ番報告ありがとうございます！ ★☆★\n\n' + 
+          name + 'さんの ' + kiriban + ' 番ゲット報告を受け付けました！\n\n' +
+          '管理人が確認次第、お礼のメールをお送りします♪');
+    
+    // フォームをリセット
+    document.getElementById('kiriban').value = '';
+    document.getElementById('name').value = '';
+    
+    return false; // フォーム送信を止める
+}
 //-->
 </script>
 </head>
@@ -204,11 +230,11 @@ window.onload = function() {
 </tr>
 <tr>
 <td>
-<form action="guest.cgi" method="post" class="retro-form">
+<form onsubmit="return reportKiriban()" class="retro-form">
 キリ番ゲット！<br>
-<input type="text" name="kiriban" class="retro-input" size="8"><br>
+<input type="text" id="kiriban" class="retro-input" size="8"><br>
 お名前：<br>
-<input type="text" name="name" class="retro-input" size="15"><br>
+<input type="text" id="name" class="retro-input" size="15"><br>
 <input type="submit" value="報告！" class="retro-button">
 </form>
 </td>
